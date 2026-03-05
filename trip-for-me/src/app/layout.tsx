@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Montserrat, Quicksand } from 'next/font/google';
-import "./globals.scss";
+import "../styles/globals.scss";
+import Header from "@/components/Header";
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${dmSerifDisplay.variable} ${montserrat.variable} ${quicksand.variable}`}>
+        <Header />
         {children}
       </body>
     </html>

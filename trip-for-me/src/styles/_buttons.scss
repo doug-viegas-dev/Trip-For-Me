@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+.button_light {
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border: solid 1px white;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    font-family: $font-title;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.button_dark {
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    background-color: $dark-bg;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    font-family: $font-title;
+    font-weight: 400;
+}

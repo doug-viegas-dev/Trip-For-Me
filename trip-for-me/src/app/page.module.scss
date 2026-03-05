@@ -1,0 +1,31 @@
+@use "../styles/index.scss" as *;
+
+.main {
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: $light-bg;
+  @include flex-center;
+  flex-direction: column;
+  
+  h1 {
+    @include title-style;
+    font-size: 4rem;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 150vh; // Mais uma altura grande para garantir o scroll
+  background-color: #ffffff;
+  padding: 100px 40px;
+  
+  h2 {
+    @include title-style;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}

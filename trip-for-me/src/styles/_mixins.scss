@@ -1,3 +1,5 @@
+@use "variables" as var;
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -13,7 +15,37 @@
 }
 
 @mixin title-style {
-  font-family: var(--font-dm-serif), serif;
+  color: var.$dark-bg;
+  font-family: var.$font-title;
   font-weight: 400;
   line-height: 1.2;
+}
+
+@mixin scroll-indicator($color: var.$light-bg) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; // Espaço entre o texto e a linha
+  text-transform: uppercase;
+  font-family: var.$font-secondary; // Use sua fonte secundária/condensed
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: $color;
+  
+  // Define a animação da linha
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  // A linha animada
+  &::after {
+    content: '';
+    width: 1px; // Espessura da linha
+    height: 60px; // Altura da linha
+    background-color: $color;
+    animation: scrollLine 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
 }

@@ -1,8 +1,10 @@
+import Hero from '@/components/Hero';
+import styles from './page.module.scss';
+
 export default function Home() {
   return (
-    <main>
-      <h1>Trip For Me</h1>
-      <p>Projeto configurado com sucesso!</p>
+    <main className={styles.main}>
+     <Hero />
     </main>
   );
 }
