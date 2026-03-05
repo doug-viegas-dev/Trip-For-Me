@@ -4,7 +4,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./header.module.scss";
-import Logo from "../../../public/imgs/logo_white.png";
+import Logo from "../../../public/imgs/logo.png";
+import LogoWhite from "../../../public/imgs/logo_white.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,14 +43,14 @@ export default function Header() {
     >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <img src={Logo.src} alt="Trip For Me Logo" />
+          <img src={isScrolled ? Logo.src : LogoWhite.src} alt="Trip For Me Logo" />
         </Link>
         <button
           className={styles.menuButton}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Abrir menu"
         >
-          <span className={styles.hamburger}></span>
+          <span className={`${styles.hamburger} ${isScrolled ? styles.dark_hamburger : ''}`}></span>
         </button>
       </div>
 
