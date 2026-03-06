@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as *;
 
 .about {
-  padding-block: 30px;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,7 @@
   text-align: center;
   width: 100%;
   height: 90vh;
+  background-color: white;
   .text_about {
     display: flex;
     flex-direction: column;

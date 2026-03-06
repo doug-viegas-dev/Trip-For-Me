@@ -1,0 +1,138 @@
+@use "../../styles/index" as *;
+
+.top_section {
+  padding-top: 40px;
+  padding-inline: 5%;
+  height: 120vh;
+  background-color: $light-bg;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .top_nav {
+    padding-block: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: $font-title;
+
+    > button {
+      background: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: $accent-color;
+        transition: background-color 1s ease-in-out;
+      }
+    }
+
+    .nav_tab_active {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $accent-color;
+        transition: width 0.2s ease-in-out;
+      }
+    }
+  }
+  .grid_estilo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    animation: slideInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    width: 100%;
+    padding-bottom: 40px;
+
+    .card {
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      border-radius: 5px;
+      overflow: hidden;
+
+      &:hover .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: background-color 0.2s ease-in-out;
+      }
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      letter-spacing: 1px;
+    }
+  }
+
+  .grid_popular {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    animation: slideInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    width: 100%;
+    padding-bottom: 40px;
+
+    .card {
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+
+      &:hover .overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: background-color 0.2s ease-in-out;
+      }
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .button_final {
+    width: 100px;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); // Começa 30px abaixo
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); // Termina na posição original
+  }
+}
