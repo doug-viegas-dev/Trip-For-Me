@@ -1,0 +1,72 @@
+@use "../../styles/index.scss" as *;
+
+#column_logo {
+  > img {
+    width: 150px;
+  }
+}
+
+#column_cadastur {
+  > img {
+    width: 100%;
+  }
+
+  .divqr {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    > img {
+      width: 30%;
+    }
+  }
+}
+
+.footer {
+  background-color: $dark-bg;
+  height: 250px;
+  padding-inline: 10%;
+  padding-block: 40px;
+  display: grid;
+  width: 100%;
+  list-style: none;
+
+  .footer_columns {
+    color: white;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+
+    
+  }
+
+  .column_footer {
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    > ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 5px;
+    }
+  }
+
+  .copyright {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%; 
+      height: .5px;
+      background-color: white;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+  }
+}

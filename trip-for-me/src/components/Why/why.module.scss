@@ -1,0 +1,101 @@
+@use "../../styles/index" as *;
+#icon_feature_1 {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: $antique-brass;
+  mask-image: url("/icons/experiencia.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+} 
+
+#icon_feature_2 {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: $complementary-color-1;
+  mask-image: url("/icons/paises.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+#icon_feature_3 {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: $accent-color;
+  mask-image: url("/icons/clientes.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+#icon_feature_4 {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: $complementary-color-2;
+  mask-image: url("/icons/roteiros.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.why_section {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding-block: 40px;
+  padding-inline: 10%;
+  background-color: white;
+  >h2 {
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 1px;
+      background-color: $accent-color;
+      margin-top: 10px;
+    }
+  }
+
+  .why_features {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .why_feature {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      font-weight: 400;
+      font-family: $font-main;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $complementary-color-2;
+    margin-top: 10px;
+    opacity: .3;  
+  }
+}

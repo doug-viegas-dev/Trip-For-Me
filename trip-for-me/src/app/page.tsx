@@ -4,6 +4,9 @@ import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
 import Top from '@/components/Top';
 import Trips from '@/components/Trips';
+import Why from '@/components/Why';
+import Ready from '@/components/Ready';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
      <Testimonials />
      <Top/>
      <Trips/>
+     <Why/>
+     <Ready/>
+     <Footer/>
     </main>
   );
 }
