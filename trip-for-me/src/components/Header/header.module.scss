@@ -8,7 +8,10 @@
   height: 100px;
   z-index: 100;
   background: transparent;
-  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, height 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    background-color 0.4s ease-in-out,
+    height 0.4s ease-in-out;
 
   &.visible {
     transform: translateY(0);
@@ -20,17 +23,17 @@
 
   &.scrolled {
     background-color: #ffffff;
-    height: 80px; 
+    height: 80px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
-  
+
   .container {
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
     padding: 0 40px;
     @include flex-center;
-    justify-content: space-between; 
+    justify-content: space-between;
   }
 
   .logo {
@@ -62,8 +65,9 @@
       background: #fff;
       position: relative;
 
-      &::before, &::after {
-        content: '';
+      &::before,
+      &::after {
+        content: "";
         position: absolute;
         width: 25px;
         height: 2px;
@@ -71,8 +75,12 @@
         left: 0;
       }
 
-      &::before { top: -8px; }
-      &::after { bottom: -8px; }
+      &::before {
+        top: -8px;
+      }
+      &::after {
+        bottom: -8px;
+      }
     }
 
     .dark_hamburger {
@@ -81,8 +89,9 @@
       background: $dark-bg;
       position: relative;
 
-      &::before, &::after {
-        content: '';
+      &::before,
+      &::after {
+        content: "";
         position: absolute;
         width: 25px;
         height: 2px;
@@ -90,10 +99,13 @@
         left: 0;
       }
 
-      &::before { top: -8px; }
-      &::after { bottom: -8px; }
+      &::before {
+        top: -8px;
+      }
+      &::after {
+        bottom: -8px;
+      }
     }
-    
   }
 }
 
@@ -103,16 +115,21 @@
   left: -100%; // Começa fora da tela (à esquerda)
   width: 100%;
   height: 100vh;
-  background: #1a1a1a; // Um fundo escuro sofisticado
+  background: white; // Um fundo escuro sofisticado
   z-index: 200;
   transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1); // Movimento suave
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:last baseline;
+  align-items: flex-start;
+  padding-inline: 10%;
 
   &.navOpen {
     left: 0; // Quando aberto, ele desliza para a posição 0
+  }
+
+  .navLogo {
+    width: 150px;
   }
 
   .closeButton {
@@ -121,29 +138,70 @@
     right: 40px;
     background: transparent;
     border: none;
-    color: #fff;
+    color: $dark-bg;
     font-size: 2rem;
     cursor: pointer;
   }
 
   .menuList {
-    list-style: none;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    @include title-style;
+    color: $dark-bg;
 
     li {
       margin: 20px 0;
-      overflow: hidden; // Para efeitos de animação futura
+      overflow: hidden;
+      list-style: none;
+      list-style-type: none;
+      cursor: pointer;
+      text-decoration: none;
 
       a {
-        color: #fff;
-        font-size: 2.5rem;
+        font-size: 14px;
         text-decoration: none;
         letter-spacing: 4px;
-        transition: color 0.3s;
-        @include title-style; // Usando o mixin que criamos!
+        font-weight: 500;
+
+        &:visited {
+        color: inherit; // Evita que o link fique roxo após ser clicado
+      }
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $dark-bg;
+      opacity: .5;
+    }
+  }
+
+  .contact_list {
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    display: flex;
+    gap: 10px;
+
+    li {
+      overflow: hidden;
+
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        letter-spacing: 4px;
+        font-weight: 500 !important;
+        @include title-style;
 
         &:hover {
-          color: #ccc;
+          text-decoration: underline;
+        }
+
+        .contact_icon {
+          font-size: 22px;
         }
       }
     }

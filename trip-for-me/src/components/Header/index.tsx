@@ -6,6 +6,9 @@ import Link from "next/link";
 import styles from "./header.module.scss";
 import Logo from "../../../public/imgs/logo.png";
 import LogoWhite from "../../../public/imgs/logo_white.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons'; 
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,14 +46,19 @@ export default function Header() {
     >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <img src={isScrolled ? Logo.src : LogoWhite.src} alt="Trip For Me Logo" />
+          <img
+            src={isScrolled ? Logo.src : LogoWhite.src}
+            alt="Trip For Me Logo"
+          />
         </Link>
         <button
           className={styles.menuButton}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Abrir menu"
         >
-          <span className={`${styles.hamburger} ${isScrolled ? styles.dark_hamburger : ''}`}></span>
+          <span
+            className={`${styles.hamburger} ${isScrolled ? styles.dark_hamburger : ""}`}
+          ></span>
         </button>
       </div>
 
@@ -61,21 +69,38 @@ export default function Header() {
         >
           ✕
         </button>
+        <img src={Logo.src} alt="Trip For Me Logo" className={styles.navLogo} />
+
         <ul className={styles.menuList}>
           <li>
-            <Link href="/">DESTINATIONS</Link>
+            <Link href="/">INTERNACIONAIS</Link>
           </li>
           <li>
-            <Link href="/">EXPERIENCES</Link>
+            <Link href="/">NACIONAIS</Link>
           </li>
           <li>
-            <Link href="/">INSPIRATION</Link>
+            <Link href="/">VIAGEM DO MEU JEITO</Link>
           </li>
           <li>
-            <Link href="/">ABOUT</Link>
+            <Link href="/">PORQUE A TRIP FOR ME</Link>
+          </li>
+        </ul>
+
+        <ul className={styles.contact_list}>
+          <li>
+            <a href="">
+              <FontAwesomeIcon icon={faWhatsapp} className={styles.contact_icon} />
+            </a>
           </li>
           <li>
-            <Link href="/">CONTACT</Link>
+            <a href="">
+              <FontAwesomeIcon icon={faInstagram} className={styles.contact_icon} />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FontAwesomeIcon icon={faEnvelope} className={styles.contact_icon}/>
+            </a>
           </li>
         </ul>
       </nav>
