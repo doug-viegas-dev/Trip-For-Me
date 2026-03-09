@@ -2,7 +2,7 @@ import styles from "./hero.module.scss";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <video autoPlay muted loop poster="imgs/video-hero-poster.png" className={styles.video}>
+      <video autoPlay muted loop poster="/imgs/hero-video-poster.png" className={styles.video}>
         <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>
       <div className={styles.content_hero}>
