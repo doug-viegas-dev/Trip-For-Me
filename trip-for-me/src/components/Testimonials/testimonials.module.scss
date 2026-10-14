@@ -59,6 +59,6 @@
 }
 
 // Customizando as "bolinhas" do Swiper para combinarem com seu design
-:global(.swiper-pagination-bullet-active) {
+.testimonial_section :global(.swiper-pagination-bullet-active) {
   background: $deep-teal !important;
 }
