@@ -2,15 +2,17 @@
 name: Trip For Me
 description: Design system editorial contemporâneo para uma agência de viagens personalizada.
 colors:
+  # Identidade oficial da marca
   deep-teal: "#0b3b52"
+  antique-brass: "#c79e5e"
   dark-bg: "#04161f"
   light-bg: "#f7f5f0"
-  antique-brass: "#c79e5e"
-  accent-coral: "#e76f51"
   complementary-indigo: "#1c2755"
   complementary-slate: "#8e93a6"
-  grey: "#f9f9f9"
+
+  # Cores utilitárias existentes, não institucionais
   white: "#ffffff"
+  grey: "#f9f9f9"
   muted-text: "#666666"
 typography:
   display:

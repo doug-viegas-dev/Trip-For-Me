@@ -8,6 +8,8 @@ Antes de implementar qualquer interface, o Codex deve ler, nesta ordem:
 2. `DESIGN.md` — tokens, direção visual, componentes e decisões aprovadas.
 3. Os arquivos existentes da superfície que será alterada.
 
+Em tarefas de direção de arte, layout, interação ou motion, incluindo qualquer execução do Impeccable, também deve ler `REFERENCES.md` após `DESIGN.md` e antes dos arquivos da superfície. As referências registram intenções visuais e propostas, não substituem decisões aprovadas nem autorizam implementação.
+
 `DESIGN.md` é a autoridade visual do projeto. O código existente é a evidência de referência; não deve ser substituído por uma identidade inventada.
 
 ## Regras para Codex
