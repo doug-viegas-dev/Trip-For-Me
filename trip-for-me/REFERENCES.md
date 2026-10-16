@@ -1,75 +1,122 @@
-# Referências visuais e de motion
+# Trip For Me — Referências visuais e de motion
 
-Este arquivo reúne referências externas selecionadas para orientar futuras melhorias visuais e de motion da Home do Trip For Me.
+> **Status:** referências selecionadas para orientar a direção de arte digital. **Não constituem autorização para implementar mudanças.**
+>
+> **Hierarquia de contexto:** `PRODUCT.md` define a marca e sua comunicação; `DESIGN.md` define a identidade visual e as decisões aprovadas; este arquivo registra inspirações externas e oportunidades de adaptação. Em caso de conflito, prevalecem as diretrizes oficiais e as decisões aprovadas.
 
-As referências abaixo são intenções visuais, não autorização para implementação. `DESIGN.md` continua sendo a autoridade visual do projeto.
+## 1. Objetivo
 
-## Guardrails do projeto
+Construir uma experiência de navegação editorial, sofisticada e imersiva para a Home do Trip For Me, sem descaracterizar a marca.
 
-- Preservar integralmente as cores e as famílias tipográficas oficiais documentadas em `DESIGN.md`.
-- Não copiar layouts literalmente; extrair apenas princípios de composição, hierarquia, interação e ritmo.
-- Não inventar especificações técnicas de motion, bibliotecas, easings ou durações sem validação e aprovação.
-- Manter acessibilidade, responsividade, foco visível e alternativa para `prefers-reduced-motion` em qualquer proposta futura.
-- Registrar propostas como propostas até que sejam aprovadas; esta documentação não altera código, estilos, assets ou dependências.
+As referências são complementares, **não modelos a copiar**:
 
-## Referência 01 — Pelorus Travel
+| Referência | Aspecto selecionado | Papel na experiência |
+| --- | --- | --- |
+| **Pelorus Travel** | Hover refinado e organização das informações | Interatividade e clareza |
+| **Black Tomato** | Aparência limpa e elegante, tratamento tipográfico e composição editorial | Linguagem visual e hierarquia |
+| **Avenue H** | Fluidez do scroll e sensação de jornada | Ritmo narrativo e transições |
+
+### Restrições permanentes
+
+- Preservar integralmente as **cores e famílias tipográficas oficiais** registradas em `DESIGN.md`.
+- Não importar cores, fontes, logotipos, textos, imagens ou layouts literalmente das referências.
+- Preservar os espaçamentos e raios atuais aprovados; qualquer refinamento deve ser pontual e justificado.
+- Não escolher antecipadamente bibliotecas, curvas de easing, durações, parallax, pinning ou smooth-scroll sem avaliação técnica e aprovação.
+- Respeitar acessibilidade, responsividade, navegação por teclado e `prefers-reduced-motion`.
+- Distinguir sempre **observação selecionada**, **proposta** e **decisão aprovada**.
+- Não modificar código ou assets com base apenas neste documento.
+
+## 2. Referência 01 — Pelorus Travel
 
 URL: [pelorustravel.com](https://pelorustravel.com/)
 
-### Observações selecionadas
+### O que foi selecionado pelo responsável
 
-- Efeitos hover refinados.
-- Organização e apresentação das informações.
-- Interações elegantes e intencionais.
+- O estilo dos efeitos **hover**.
+- A maneira como as informações são organizadas e apresentadas.
+- Interações discretas, elegantes e intencionais.
 
-### Aplicações potenciais na Home — propostas
+### Aplicações potenciais no Trip For Me — propostas
 
-- Estudar refinamentos nos estados hover dos elementos interativos já existentes, preservando seus tokens, semântica e equivalentes de teclado.
-- Avaliar se a ordem e a apresentação das informações das seções podem ficar mais claras sem alterar o conteúdo aprovado.
-- Tornar as interações mais intencionais quando ajudarem a indicar estado, orientação ou ação.
+- Refinar o feedback visual dos elementos interativos existentes, sem transformar hover em efeito decorativo.
+- Usar hierarquia, agrupamentos e espaçamento para tornar informações e ações mais fáceis de localizar.
+- Garantir equivalentes para teclado (`:focus-visible`) e toque, sem depender de hover para revelar informações essenciais.
 
-Estas propostas não definem efeitos, duração, easing ou implementação específicos.
+**Não estabelecido:** efeitos exatos, duração, easing, animações de cards, bibliotecas ou estados finais.
 
-## Referência 02 — Black Tomato
+## 3. Referência 02 — Black Tomato
 
 URL: [blacktomato.com](https://www.blacktomato.com/)
 
-### Observações selecionadas
+## O que foi selecionado pelo responsável
 
-- Aparência geral limpa e sofisticada.
-- Hierarquia e estilização tipográfica editorial.
-- Espaçamentos e organização visual.
-- Equilíbrio entre fotografia, texto e áreas de respiro.
+- O estilo e a aparência geral: **limpos, elegantes e sofisticados**.
+- A maneira como a tipografia é **estilizada e hierarquizada**.
+- A organização editorial das informações.
+- O equilíbrio entre fotografia, texto e espaços de respiro.
 
-### Aplicações potenciais na Home — propostas
+### Aplicações potenciais no Trip For Me — propostas
 
-- Usar a hierarquia tipográfica e o espaçamento como primeiros instrumentos de refinamento, respeitando as famílias e os tokens oficiais do Trip For Me.
-- Avaliar composições que deem à fotografia, ao texto e às áreas de respiro papéis claros, sem introduzir novos tratamentos de cor ou tipografia.
-- Revisar a organização visual das seções para reforçar a leitura editorial e a compreensão do próximo passo.
+- Explorar variações de escala, peso, largura de linha, alinhamento e ritmo usando **DM Serif Display, Montserrat e Quicksand**, sem substituir as famílias oficiais.
+- Construir composições editoriais em que imagem e texto tenham funções claras.
+- Preservar a leitura rápida e o respiro, evitando seções densas ou visualmente repetitivas.
 
-Estas propostas não autorizam redesign, substituição de conteúdo ou criação de novos tokens.
+**Não estabelecido:** nova escala tipográfica, novos tokens, alteração da paleta ou reprodução de grids específicos.
 
-## Referência 03 — Avenue H
+## 4. Referência 03 — Avenue H
 
 URL: [avenueh.com](https://www.avenueh.com/) 
 
-### Observações selecionadas
+**Registro visual fornecido:** `Avenue.mp4` (anexo da conversa; principal referência de motion).
 
-- Fluidez da navegação durante o scroll.
-- Sensação de jornada contínua.
-- Transições narrativas entre seções.
-- Progressão visual e composições fotográficas dinâmicas.
-- Alternância entre momentos de movimento e descanso visual.
+### O que foi selecionado pelo responsável
 
-### Aplicações potenciais na Home — propostas
+- A **fluidez da navegação** ao rolar a página.
+- A sensação de que o scroll conduz o visitante por uma **jornada**.
+- A progressão visual entre diferentes composições.
+- Transições narrativas entre seções e momentos de movimento alternados com descanso visual.
 
-- Estudar uma progressão mais contínua entre as seções existentes, mantendo a leitura em fluxo vertical e a narrativa atual.
-- Avaliar transições narrativas que apoiem a mudança de contexto entre seções, sem bloquear leitura, foco ou interação.
-- Usar a alternância entre movimento e descanso visual como critério de composição e ritmo, sem assumir uma técnica específica.
-- Explorar composições fotográficas dinâmicas somente dentro dos assets e padrões editoriais aprovados.
+### Aplicações potenciais no Trip For Me — propostas
 
-Estas propostas não definem parallax, autoplay, bibliotecas, easings ou durações.
+- Trabalhar a continuidade perceptiva entre as seções existentes, mantendo a navegação vertical natural.
+- Usar a passagem de uma seção a outra para reforçar a narrativa: descoberta, curadoria, confiança e convite ao contato.
+- Alternar fotografias de maior impacto com composições mais serenas e informativas.
+- Usar motion para revelar ou contextualizar conteúdo, sem restringir a rolagem nem atrasar o acesso à informação.
+- Projetar a mesma narrativa com animações reduzidas ou ausentes para quem prefere menos movimento.
 
-## Regra de decisão
+**Não estabelecido:** implementação de smooth scrolling, scroll hijacking, pinning, parallax, GSAP, Motion, Lenis, timings, easing ou coreografias específicas. Essas escolhas exigem protótipo e validação posterior.
 
-Qualquer implementação futura deve ser confrontada primeiro com `DESIGN.md`, depois com estas referências. Em caso de conflito, prevalecem os tokens, as restrições e as decisões aprovadas em `DESIGN.md`.
+> **Nota de atribuição:** a referência principal de **fluidez e sensação de jornada** é **Avenue H**, não Black Tomato.
+
+## 5. Possíveis pontos de aplicação na Home — não aprovados
+
+| Superfície atual | Referência útil | Hipótese a avaliar |
+| --- | --- | --- |
+| `Header` e menu | Pelorus Travel | Feedback de hover/foco e clareza da navegação |
+| `Hero` → `About` | Avenue H | Transição de abertura para narrativa editorial |
+| `About` e `Why` | Black Tomato | Hierarquia de texto, composição e respiro |
+| `Top` e `Trips` | Pelorus Travel + Black Tomato | Exploração dos destinos com organização e interação refinadas |
+| Passagem entre seções da Home | Avenue H | Ritmo contínuo sem efeitos intrusivos |
+
+Essas relações são **hipóteses de direção de arte**, não especificações nem autorização de alteração.
+
+## 6. Como Codex e Impeccable devem utilizar este arquivo
+
+1. Ler `PRODUCT.md` e `DESIGN.md` antes desta curadoria, além de `AGENTS.md` e do código da superfície analisada.
+2. Utilizar cada referência **somente** para a característica explicitamente selecionada acima.
+3. Em auditorias (`critique`, `audit` ou equivalentes), separar **observação do site**, **proposta adaptada** e **mudança autorizada**.
+4. Quando o comportamento depender do movimento real, consultar a gravação acessível ou observar a interação funcional; não inferir detalhes técnicos a partir de descrições ou imagens estáticas.
+5. Antes de implementar, elaborar proposta delimitada com impacto visual, arquivos prováveis, critérios de aceite, estados mobile/teclado e tratamento de `prefers-reduced-motion`.
+6. Implementar apenas depois de aprovação explícita, em pequenas alterações verificáveis.
+
+## 7. Critérios para aprovar futuras propostas
+
+- Identidade e tom de voz alinhados a `PRODUCT.md` e `DESIGN.md`.
+- Composição e hierarquia mais claras, sem aumento de ruído visual.
+- Motion com função narrativa ou de orientação, não mero ornamento.
+- Leitura e navegação preservadas em desktop, tablet e mobile.
+- Ações disponíveis por teclado e toque; ausência de conteúdo essencial exclusivo de hover.
+- Alternativa adequada para `prefers-reduced-motion`.
+- Performance e acessibilidade consideradas antes de introduzir dependências ou efeitos complexos.
+
+**Situação atual:** referências registradas; aplicações e detalhes técnicos **pendentes de aprovação**. Nenhuma implementação é autorizada por este documento.

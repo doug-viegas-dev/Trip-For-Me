@@ -1,8 +1,8 @@
 ---
 name: Trip For Me
-description: Design system editorial contemporâneo para uma agência de viagens personalizada.
+description: Design System e direção de arte digital da Trip For Me, com identidade oficial preservada.
 colors:
-  # Identidade oficial da marca
+  # Cores oficiais da identidade visual da marca.
   deep-teal: "#0b3b52"
   antique-brass: "#c79e5e"
   dark-bg: "#04161f"
@@ -10,229 +10,288 @@ colors:
   complementary-indigo: "#1c2755"
   complementary-slate: "#8e93a6"
 
-  # Cores utilitárias existentes, não institucionais
+  # Cores técnicas já observadas no frontend; não são cores institucionais.
   white: "#ffffff"
   grey: "#f9f9f9"
   muted-text: "#666666"
+
 typography:
+  # Famílias oficiais. Escalas e pesos existentes são descritos no corpo do documento.
   display:
-    fontFamily: "DM Serif Display, Georgia, serif"
-    fontSize: "60px"
-    fontWeight: 600
-    lineHeight: "3rem"
-    letterSpacing: "normal"
+    fontFamily: "Montserrat, Arial, sans-serif"
   section:
-    fontFamily: "DM Serif Display, Georgia, serif"
-    fontSize: "2.5rem"
-    fontWeight: 400
-    lineHeight: 1.2
+    fontFamily: "Montserrat, Arial, sans-serif"
   body:
     fontFamily: "Montserrat, Arial, sans-serif"
-    fontSize: "13px"
-    fontWeight: 300
-    lineHeight: 1.6
   label:
     fontFamily: "Quicksand, Arial, sans-serif"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "1px"
+
 rounded:
+  # Valores atuais preservados como referência de forma.
   sm: "3px"
   md: "5px"
   lg: "8px"
+
 spacing:
+  # Escala atual preservada por decisão do responsável pelo projeto.
   xs: "5px"
   sm: "10px"
   md: "20px"
   lg: "30px"
   xl: "40px"
   section-edge: "10%"
-components:
-  button-light:
-    backgroundColor: "transparent"
-    textColor: "{colors.white}"
-    rounded: "{rounded.sm}"
-    padding: "10px"
-    height: "40px"
-  button-dark:
-    backgroundColor: "{colors.dark-bg}"
-    textColor: "{colors.white}"
-    rounded: "{rounded.sm}"
-    padding: "10px"
-    height: "40px"
 ---
 
-## Overview
+# Trip For Me — Design System
 
-**Creative North Star: "Editorial contemporânea, sofisticada e imersiva."**
+## 1. Autoridade, status e modo de uso
 
-[Comprovado] O frontend atual combina DM Serif Display, Montserrat e Quicksand com uma paleta de azul-petróleo, fundo azul profundo, dourado antigo, coral, tons azulados e fundos claros. A composição usa hero audiovisual, fotografia de destinos em grande escala, texto em caixa alta, tracking e seções com bastante espaço.
+Este documento orienta a **identidade aplicada à interface**, a direção de arte e as decisões futuras de design do site Trip For Me. Deve ser lido pelo Codex e pelo Impeccable antes de analisar, propor ou implementar mudanças visuais.
 
-[Direção aprovada para esta etapa] A interface deve parecer uma publicação de viagens cuidadosamente editada: clara, atmosférica e confiante. A sofisticação vem da hierarquia, do ritmo, da fotografia e da precisão dos detalhes, não de efeitos decorativos acumulados.
+- **[Oficial — marca]** Cores institucionais, famílias tipográficas, posicionamento e tom de voz fornecidos pelo responsável pela Trip For Me. Não modificar sem aprovação expressa.
+- **[Aprovado — preservar]** Os espaçamentos e o ritmo visual atualmente apreciados no site devem ser mantidos. Os raios existentes também devem ser preservados, sem redesenho arbitrário.
+- **[Comprovado — implementação]** Valores técnicos e estilos encontrados no código atual. Sua existência não significa que todos estejam homologados como padrões para novos componentes.
+- **[Diretriz]** Orientação de experiência, acessibilidade e expressão editorial coerente com a marca.
+- **[Referência selecionada]** Elementos de outros sites escolhidos como inspiração; não representam autorização de cópia ou implementação.
+- **[Pendente de aprovação]** Propostas que exigem decisão explícita antes de alterar código, conteúdo, assets ou comportamento.
 
-[Pendente de aprovação] A consolidação de nomes semânticos, escalas tipográficas, container principal e regras responsivas ainda precisa ser aprovada antes de alterar o código.
+**Como interpretar o frontmatter:** as seis cores institucionais e as famílias tipográficas são oficiais. `white`, `grey` e `muted-text` são valores auxiliares já existentes, não novas cores de marca. `spacing` e `rounded` registram os valores atuais a preservar; não obrigam todas as seções a usar os mesmos recuos ou raios. As dimensões dos componentes e a escala tipográfica que ainda precisam de avaliação ficam descritas no corpo deste documento, não como novos tokens normativos.
 
-**Key Characteristics:**
+**Precedência:** identidade oficial e decisões aprovadas neste documento → restrições de produto e acessibilidade → referências selecionadas → implementação atual como evidência. Em caso de conflito, registrar o conflito e não aplicar uma mudança por conta própria.
 
-- Composição limpa e intencional.
-- Hierarquia tipográfica marcada entre display serifado e sans-serif funcional.
-- Fotografia de viagem como elemento principal, não como decoração periférica.
-- Espaçamento generoso com ritmo repetível.
-- Motion discreto, elegante e funcional.
-- Componentes reutilizáveis sem aparência de template genérico.
+## 2. North Star e personalidade
 
-### Photography editorial
+**Essência oficial: Segurança Sofisticada.** A Trip For Me é a antítese do turismo de massa: calma onde há excesso, profunda onde há superficialidade e exclusiva sem ser inacessível. A experiência comunica curadoria, conforto, organização e segurança sem apelar para ostentação.
 
-[Diretriz] Priorizar fotografias de viagem de alta qualidade, com sensação de lugar, escala e contexto humano ou arquitetônico. Preferir imagens com composição forte, luz natural e espaço suficiente para leitura quando houver texto sobreposto.
+**Expressão visual:** uma publicação de viagens cuidadosamente editada — contemporânea, elegante, atmosférica e confiante. A sofisticação emerge de hierarquia, fotografia, precisão dos detalhes, composição e respiro, não do acúmulo de efeitos.
 
-[Diretriz] Usar `cover` e overlays apenas para garantir legibilidade e continuidade visual. Não aplicar filtros pesados, texto embutido nas imagens ou tratamentos que apaguem a identidade do destino.
+**Personalidade: Esteta Funcional.** Beleza e utilidade são inseparáveis. Um detalhe visual deve favorecer compreensão, orientação, confiança ou prazer de explorar.
 
-[Pendente de aprovação] Critérios editoriais detalhados por tipo de destino, origem/licenciamento das imagens, tratamento de cor e proporção oficial para cada superfície.
+**Público informado pela marca:** HENRYs e Boomers. Dar atenção especial à legibilidade, clareza, previsibilidade e qualidade da experiência, sem presumir preferências universais de grupos etários.
 
-## Colors
+### Princípios de direção de arte
 
-[Comprovado] A paleta atual é sóbria e marítima, com pontos quentes de dourado e coral. Ela deve continuar sendo a fonte de personalidade visual até que uma alteração de marca seja aprovada.
+1. **Calma visual:** evitar ruído, urgência artificial, exageros promocionais e estímulos simultâneos.
+2. **Narrativa com substância:** conduzir a descoberta por fotografias e conteúdo relevantes.
+3. **Hierarquia antes de decoração:** resolver primeiro escala, alinhamento, contraste e espaço.
+4. **Luxo inteligente:** sofisticação que ajuda o visitante a entender e decidir.
+5. **Consistência sem monotonia:** padrões reconhecíveis com composições editoriais variadas; não repetir mecanicamente blocos ou cards.
 
-### Primary
+## 3. Identidade cromática
 
-- **Deep Teal** (`{colors.deep-teal}`): destaque de marca, ícones, paginação e elementos de ênfase.
-- **Dark Background** (`{colors.dark-bg}`): superfícies escuras, footer, gradientes funcionais e contraste principal.
+### Paleta oficial — preservar
 
-### Secondary
+| Função na marca | Token atual | Cor | Nome |
+| --- | --- | --- | --- |
+| Principal | `deep-teal` | `#0b3b52` | Deep Teal — Azul Petróleo Escuro |
+| Secundária | `antique-brass` | `#c79e5e` | Antique Brass — Dourado Envelhecido |
+| Texto principal | `dark-bg` | `#04161f` | Rich Black — Preto Azulado |
+| Fundo neutro | `light-bg` | `#f7f5f0` | Isabelline — Off-White Linho |
+| Ícone 1 | `complementary-indigo` | `#1c2755` | Space Cadet — Azul Marinho |
+| Ícone 2 | `complementary-slate` | `#8e93a6` | Cool Grey — Cinza Aço |
 
-- **Antique Brass** (`{colors.antique-brass}`): detalhe sofisticado e destaque pontual.
-- **Accent Coral** (`{colors.accent-coral}`): sublinhados, estados ativos e acentos de navegação.
+Os nomes legados `dark-bg` e `light-bg` permanecem por compatibilidade; as funções oficiais são **texto principal** e **fundo neutro**. Não renomear tokens no código sem uma tarefa específica aprovada.
 
-### Tertiary
+### Neutros auxiliares e cor legada
 
-- **Complementary Indigo** (`{colors.complementary-indigo}`): variação cromática usada nos ícones de diferenciais.
-- **Complementary Slate** (`{colors.complementary-slate}`): divisórias e apoio visual.
+- **[Comprovado — auxiliar]** `#ffffff`: branco para superfícies e contraste; não é uma sétima cor institucional.
+- **[Comprovado — auxiliar]** `#f9f9f9` e `#666666`: neutros observados em estilos existentes; não devem ser apresentados como identidade oficial.
+- **[Comprovado — legado, não oficial]** `#e76f51`: coral presente na implementação anterior e no documento original, mas **não consta da paleta oficial informada**. Não aplicar em novos componentes como acento de marca. Não remover ou substituir seus usos atuais sem auditoria e aprovação específicas.
+- **[Comprovado — implementação]** Valores locais de `rgba(...)`, sombras e overlays são recursos técnicos e devem ser avaliados em contexto.
 
-### Neutral
+**Regra cromática:** não importar cores, gradientes ou tratamentos cromáticos dos sites de referência. Usar overlays quando necessários à leitura sobre fotografia, sem comprometer a imagem ou introduzir acentos arbitrários.
 
-- **Light Background** (`{colors.light-bg}`): fundo claro principal.
-- **Grey** (`{colors.grey}`): neutro claro auxiliar.
-- **White** (`{colors.white}`): texto e superfícies claras existentes.
-- **Muted Text** (`{colors.muted-text}`): texto secundário observado em Testimonials.
+## 4. Tipografia e hierarquia
 
-**The Preserve the Palette Rule.** Não introduzir novas cores ou substituir as existentes em uma interface sem aprovação explícita. Valores literais atuais devem ser mapeados para tokens antes de serem alterados.
+### Famílias oficiais
 
-## Typography
+- **Montserrat:** títulos, texto principal de destaque e leitura funcional.
+- **Quicksand:** textos de apoio, labels e metadados, conforme a necessidade da interface.
 
-**Display Font:** DM Serif Display, com Georgia/serif como fallback.
-**Body Font:** Montserrat, com Arial/sans-serif como fallback.
-**Label Font:** Quicksand, com Arial/sans-serif como fallback.
+As famílias são fixas. Das referências externas, podemos adaptar **composição tipográfica**, proporção, quebras de linha, tracking, largura de coluna, alinhamento e relação de escala — nunca substituir as fontes oficiais.
 
-[Comprovado] A intenção tipográfica é editorial nos títulos e funcional nos textos, com labels frequentemente em caixa alta e letter-spacing.
+### Hierarquia observada — valores não homologados
 
-[Atenção] O código registra `--font-dm-serif-display` no layout, enquanto o token Sass atual consulta `--font-dm-serif`. Até a correção ser aprovada, essa discrepância deve ser tratada como risco de implementação, não como autorização para trocar a fonte.
+| Uso | Valores encontrados | Situação |
+| --- | --- | --- |
+| Display / Hero | `60px`, `line-height: 3rem`, `font-weight: 600` no CSS | Preservar inicialmente; revisar compatibilidade |
+| Título de seção | `2.5rem`, `line-height: 1.2`, peso `400` | Observado |
+| Corpo | `13–14px`, `line-height: 1.6–2` | Observado; revisar legibilidade |
+| Label / metadado | `12–14px`, tracking `1–4px`, frequentemente uppercase | Observado |
 
-### Hierarchy
+**[Decisão aplicada]** Montserrat é a família aprovada para os títulos; o token Sass usa `Montserrat, sans-serif` explicitamente, preservando os tamanhos, pesos, line-heights e espaçamentos existentes.
 
-- **Display** (observado em `60px`, line-height `3rem`): hero e mensagens de maior impacto.
-- **Section** (observado em `2.5rem`, line-height `1.2`): títulos principais de seção.
-- **Body** (observado entre `13px` e `14px`, line-height entre `1.6` e `2`): narrativa, descrições e diferenciais.
-- **Label** (observado entre `12px` e `14px`, tracking entre `1px` e `4px`, frequentemente uppercase): navegação, duração e metadados.
+**[Pendente de aprovação]** Escala responsiva, pesos efetivamente carregados, limites de largura de textos, line-height definitivo e convenção de caixa alta.
 
-**The Hierarchy Before Decoration Rule.** Dar prioridade a tamanho, peso, contraste, largura de linha e espaçamento antes de adicionar efeitos.
+**Diretriz:** a expressividade tipográfica deve transmitir autoridade serena, não gritaria. Revisar legibilidade real em desktop e mobile antes de alterar tamanhos já existentes.
 
-[Pendente de aprovação] Escala tipográfica única, pesos finais carregados por `next/font`, limites de largura de texto e uso oficial de caixa alta.
+## 5. Layout, espaçamento e ritmo editorial
 
-## Layout
+### Espaçamentos aprovados para preservação
 
-[Comprovado] A home atual usa seções full-bleed, hero de `100vh`, conteúdo central no Header com `max-width: 1440px` e paddings locais de `5%`, `10%`, `40px` e `70px`. Há grids de cinco colunas em `Top` e três colunas em `Trips`.
+**[Aprovado — preservar]** O responsável pelo projeto aprovou a preservação dos espaçamentos atuais do site. Portanto, **o refinamento visual deve partir dos valores existentes**, e não substituí-los por uma nova escala sem necessidade demonstrada e aprovação.
 
-[Comprovado] O código declara breakpoints em `768px` e `1024px`, mas os módulos de seção ainda não possuem variações responsivas próprias.
+| Token existente | Valor |
+| --- | --- |
+| `xs` | `5px` |
+| `sm` | `10px` |
+| `md` | `20px` |
+| `lg` | `30px` |
+| `xl` | `40px` |
+| `section-edge` | `10%` |
 
-### Spacing rhythm
+**[Comprovado — implementação]** Também há espaços locais de `70px`, recuos horizontais de `5%`, e paddings específicos por seção. Esses valores **permanecem válidos nos pontos onde já são utilizados**, mas não se tornam automaticamente tokens globais.
 
-Usar como mapa inicial dos valores já presentes: `5px`, `10px`, `20px`, `30px`, `40px` e `70px`. O `10%` é um recuo de seção recorrente; não tratá-lo como substituto automático de um container.
+**Regra de espaçamento:** preservar o ritmo, as áreas de respiro e o equilíbrio visual atual. O Impeccable pode apontar inconsistências e sugerir correções **pontuais**, sem padronizar à força todas as seções. Em mobile, permitir adaptações necessárias para evitar overflow, manter leitura e preservar a intenção visual.
 
-### Grid and responsive behavior
+### Composição editorial
 
-[Regra] Preservar a leitura em fluxo vertical, manter alinhamentos entre título, conteúdo e CTA e evitar que uma composição desktop determine alturas rígidas em telas pequenas.
+- Alternar imagens de grande impacto e momentos de leitura mais tranquilos.
+- Trabalhar com alinhamentos claros e assimetria controlada, quando melhorar a narrativa.
+- Evitar sequências longas de seções com exatamente a mesma estrutura visual.
+- Garantir que título, descrição, fotografia e CTA tenham papéis evidentes.
+- Usar respiro intencional, sem diminuir arbitrariamente os espaços existentes.
 
-[Pendente de aprovação] Container canônico, número de colunas por breakpoint, estratégia de empilhamento e comportamento oficial das imagens em mobile.
+### Inventário de layout atual
 
-### Motion tokens
+**[Comprovado]** Hero audiovisual de `100vh`; Header com `max-width: 1440px`; grids de cinco colunas em `Top` e três em `Trips`. Breakpoints de `768px` e `1024px` estão declarados em mixins, mas a auditoria apontou responsividade incompleta nos módulos.
 
-[Comprovado] O sistema atual usa transições entre `0.2s`, `0.4s`, `0.5s` e `0.6s`, com easing cúbico no menu e no scroll indicator. O autoplay do Swiper usa atraso de `5000ms`.
+**[Diretriz]** A composição desktop não pode impor cortes ou alturas rígidas indevidas em mobile. Priorizar reflow, crop intencional, alinhamento e legibilidade.
 
-[Diretriz] Motion deve comunicar mudança de estado, revelar conteúdo ou apoiar orientação. Toda animação nova precisa de alternativa para `prefers-reduced-motion` e não pode bloquear leitura, foco ou interação.
+**[Pendente de aprovação]** Container canônico, política definitiva de grid, distribuição de colunas por viewport e regras finais de altura para seções.
 
-[Pendente de aprovação] Escala oficial de duração/easing e política para autoplay.
+## 6. Fotografia editorial
 
-## Elevation & Depth
+**[Diretriz]** Fotografia deve transmitir lugar, atmosfera e contexto real — naturalidade, qualidade editorial, sentido de escala e curadoria. É protagonista da experiência, não mero preenchimento de cards.
 
-[Comprovado] A profundidade atual vem principalmente de fotografia, overlays escuros, text-shadow e uma sombra discreta no Header scrolled (`0 4px 20px rgba(0, 0, 0, 0.08)`).
+- Privilegiar composição sólida, luz coerente, enquadramento intencional e pontos focais reconhecíveis.
+- Usar imagens full-bleed quando sustentarem a narrativa; intercalar com fotografias menores e espaços negativos.
+- Controlar `cover`, `object-position` e overlays para evitar cortes do assunto principal ou perda de contraste do texto.
+- Evitar filtros pesados, saturação exagerada, texturas sintéticas, colagens gratuitas e texto embutido em imagens quando houver alternativa semântica.
+- Preservar assets já selecionados; qualquer troca deve ser proposta e aprovada.
 
-**The Flat-by-Default Rule.** Superfícies devem permanecer visualmente leves; sombras aparecem apenas quando comunicam separação, estado ou legibilidade.
+**[Pendente de aprovação]** Critérios específicos de tratamento de cor, proporções por superfície, origem e licenciamento de novas mídias.
 
-Não usar glassmorphism, blur ou sombras fortes sem justificativa de produto e aprovação visual.
+## 7. Referências externas e aplicações permitidas
 
-## Shapes
+**[Referências selecionadas]** As referências registram preferências de estilo, interação e motion — não autorizam reproduzir layouts nem importar identidade visual.
 
-[Comprovado] O sistema atual usa cantos discretamente arredondados: `3px` em botões, `5px` em cards de imagem e `8px` em depoimentos. Bordas são pontuais, principalmente em botões claros e estados de hover.
+| Site | Característica que interessa | Limite de uso |
+| --- | --- | --- |
+| [Pelorus Travel](https://pelorustravel.com/) | Hovers refinados, interações intencionais e organização das informações. | Não copiar efeito ou componente literalmente. |
+| [Black Tomato](https://www.blacktomato.com/) | Aparência limpa e elegante, estilização/hierarquia editorial e equilíbrio entre fotografia e respiro. | Não importar fontes, paleta ou composição pronta. |
+| [Avenue H](https://www.avenueh.com/) | Fluidez do scroll, sensação de jornada e transições narrativas com alternância de movimento e repouso. | Não presumir bibliotecas nem impor scroll forçado. |
 
-**The Quiet Shape Rule.** Formas devem apoiar a fotografia e a tipografia, sem criar uma linguagem de cards excessivamente arredondados ou infantilizada.
+**Distinção obrigatória:** **Avenue H é a referência principal de motion.** Black Tomato orienta a aparência editorial. Pelorus orienta hovers e clareza da apresentação das informações.
 
-[Pendente de aprovação] Se a escala deve ser reduzida para poucos raios sem alterar a aparência existente.
+**[Pendente de aprovação]** Storyboard de aplicação dessas referências à Home e escolha de padrões por seção. A descrição de uma animação não demonstra qual tecnologia a produz.
 
-## Components
+## 8. Motion e experiência de navegação
+
+**Direção de experiência selecionada:** o scroll deve parecer uma descoberta progressiva e contínua, como uma viagem cuidadosamente conduzida. O efeito depende de ritmo, composição, conteúdo e movimento — não apenas de rolagem suavizada.
+
+### Princípios de motion
+
+1. Movimento comunica estado, orientação, revelação ou mudança de contexto.
+2. Alternar cenas de maior impacto com pausas estáticas de leitura.
+3. Preferir transições suaves e legíveis, sem competir com fotografia ou conteúdo.
+4. Evitar scroll-jacking, parallax excessivo e efeitos simultâneos sem propósito.
+5. Hovers devem ter equivalentes perceptíveis para foco por teclado e estados touch adequados.
+6. Manter navegação nativa, foco e interação disponíveis durante transições.
+7. Respeitar `prefers-reduced-motion` em motion novo e revisar autoplay quando necessário.
+8. Escolher CSS, Motion ou GSAP **somente após** aprovar o comportamento, caso sejam realmente necessários.
+
+### Motion observado no site — não homologado como escala
+
+**[Comprovado]** Transições entre `0.2s`, `0.4s`, `0.5s` e `0.6s`; easing cúbico no menu/indicador de scroll; Swiper com autoplay de `5000ms`.
+
+**[Pendente de aprovação]** Durações canônicas, easing, stagger, gatilhos por scroll, política de autoplay, storyboard e eventuais dependências.
+
+## 9. Elevação, formas e componentes
+
+### Elevation & Depth
+
+**[Comprovado]** A profundidade atual utiliza fotografia, overlays, `text-shadow` e sombra discreta no Header após scroll (`0 4px 20px rgba(0, 0, 0, 0.08)`).
+
+**[Diretriz — Flat by Default]** Sombras e blur apenas quando comunicarem separação, estado ou legibilidade. Evitar glassmorphism decorativo, sombras exageradas e camadas artificiais.
+
+### Shapes
+
+**[Aprovado — preservar]** Continuar usando os raios atuais: `3px` em botões, `5px` em cards de imagem e `8px` em depoimentos, sem redesenho amplo de bordas.
+
+**[Diretriz — Quiet Shape]** Cantos discretos, geometria funcional e fotografia como protagonista. O fato de existirem tokens `sm`, `md` e `lg` não exige que todos os componentes compartilhem o mesmo formato.
 
 ### Buttons
 
-- **Light:** transparente, borda branca de `1px`, texto branco, altura de `40px`, padding de `10px` e raio de `3px`.
-- **Dark:** fundo `dark-bg`, texto branco, altura de `40px`, padding de `10px` e raio de `3px`.
-- **Hover observado:** alteração de fundo; o botão dark inverte para superfície branca com borda escura.
-- **Pendente:** foco visível, disabled, loading e semântica de Link versus button.
+- **[Comprovado] Light:** fundo transparente, borda branca de `1px`, texto branco, altura `40px`, padding `10px`, raio `3px`.
+- **[Comprovado] Dark:** fundo `dark-bg`, texto branco, altura `40px`, padding `10px`, raio `3px`.
+- **[Comprovado] Hover:** mudança de fundo, inclusive inversão para branco com borda escura no dark.
+- **[Pendente]** `focus-visible`, disabled, loading, dimensões mínimas de área acionável e contrato `Link` versus `button`.
+
+**Nota:** altura visual de `40px` não equivale necessariamente a área acionável de `44px`; melhorias de acessibilidade devem ser definidas sem alterar a aparência sem justificativa.
 
 ### Navigation
 
-- Header transparente sobre o hero e claro após scroll.
-- Menu lateral em superfície branca, com tipografia display e navegação em caixa alta.
-- Ícones sociais devem manter significado, label acessível e destino real quando os links forem definidos.
-- Não alterar a lógica do menu ao consolidar estilos.
+- **[Comprovado]** Header transparente sobre o Hero e claro após scroll; menu lateral com superfície branca e tipografia de navegação em caixa alta.
+- **[Diretriz]** Preservar previsibilidade, interação por teclado, nomes acessíveis, foco visível e comportamento coerente de abertura/fechamento.
+- **[Pendente]** Refinamento do hover, comportamento do Header e destinos reais dos links sociais.
 
 ### Cards and image surfaces
 
-- Cards de destino e roteiros usam imagem como superfície, `cover`, overlay e texto claro.
-- O overlay existe para contraste; não usar como efeito decorativo autônomo.
-- Cards que representem ação devem ser elementos interativos reais, não apenas `div` com cursor.
-- O card de depoimento é textual, claro, centralizado e usa aspas editoriais.
+- **[Comprovado]** Cards de destinos e roteiros com imagem `cover`, overlay e texto claro; depoimentos em card textual claro.
+- **[Diretriz]** Usar efeitos hover somente se reforçarem a interação; elementos acionáveis exigem semântica real e estados touch/teclado.
+- **[Diretriz]** Não esconder informação essencial atrás de hover nem transformar a Home em uma sequência de cards padronizados.
 
-### Signature sections
+### Seções características existentes
 
-- Hero audiovisual com título display e CTAs.
-- Faixa `Ready` com textura e CTA.
-- Bloco `Why` com ícones monocromáticos mascarados e acentos cromáticos existentes.
-- Footer institucional com marca, contato, Cadastur e QR code.
+- **Hero:** vídeo, título display e CTAs.
+- **Ready:** textura e CTA de encerramento.
+- **Why:** ícones com acentos cromáticos existentes.
+- **Footer:** informações institucionais, contato, Cadastur e QR code.
 
-### Accessibility and responsive patterns
+**[Pendente de aprovação]** Mudanças de estrutura, conteúdo, comportamento ou motion nessas seções exigem microtarefa e validação próprias.
 
-- Sempre fornecer foco visível e estados de teclado equivalentes aos estados de hover.
-- Manter landmarks, ordem de headings, labels e nomes acessíveis.
-- Garantir alvos de toque de pelo menos `44px` para controles interativos.
-- Não depender apenas de hover para revelar informação.
-- Testar em pelo menos `320px`, `390px`, `768px`, `1024px` e `1440px` antes de considerar uma alteração visual concluída.
+## 10. Tom de voz aplicado ao digital
 
-## Do's and Don'ts
+**Tom oficial: Sussurro de Autoridade.** A marca se comunica com calma, precisão e confiança. Português culto e natural, sem pedantismo; humor refinado leve quando adequado. Não usar hipérboles, gritaria publicitária, gírias de internet ou emojis infantilizados.
 
-### Do:
+### Três pilares
 
-- **Do** consultar este arquivo antes de criar ou alterar qualquer interface.
-- **Do** preservar a paleta, as fontes, os assets e o caráter editorial já evidenciados.
-- **Do** preferir alinhamentos claros, respiro generoso e componentes com uma função compreensível.
-- **Do** usar fotografia de viagem de alta qualidade e tratamento visual consistente.
-- **Do** centralizar valores repetidos antes de corrigir cada seção isoladamente.
-- **Do** validar teclado, foco, contraste, motion reduzido e responsividade junto com a estética.
+- **Autoridade Silenciosa:** explicar por que uma experiência tem valor, sem superlativos vazios.
+- **Inteligência Prática:** priorizar benefícios reais, como conforto, tempo economizado, organização e exclusividade contextualizada.
+- **Elegância Acessível:** linguagem acolhedora e inteligente, sem distanciamento ou tom elitista.
 
-### Don't:
+**Microcopy e CTAs:** linguagem clara, descritiva e persuasiva sem pressão artificial. Não inventar escassez, avaliações, depoimentos, destinos, promessas ou números de conversão.
 
-- **Don't** inventar cores, fontes, gradientes ou valores de espaçamento sem aprovação.
-- **Don't** substituir decisões existentes apenas por preferência estética.
-- **Don't** usar gradientes decorativos desnecessários, parallax excessivo, glassmorphism ou sombras exageradas.
-- **Don't** transformar a página em uma coleção de cards genéricos de template.
-- **Don't** usar hover como único caminho para conteúdo ou ação.
-- **Don't** modificar código de produção, dependências ou assets em uma tarefa documental.
+## 11. Acessibilidade, responsividade e qualidade
+
+- Preservar HTML semântico, landmarks, ordem lógica dos headings, labels e nomes acessíveis.
+- Disponibilizar `:focus-visible` e equivalentes de teclado para estados de hover; não depender de hover para revelar conteúdo.
+- Considerar alvos de toque de ao menos `44px`, sem presumir que tamanho visual e área clicável sejam idênticos.
+- Garantir contraste sobre fotos e fundos claros/escuros; validar também estados ativos e de foco.
+- Respeitar `prefers-reduced-motion` sem perder conteúdo, acesso ou contexto.
+- Verificar layout em `320px`, `390px`, `768px`, `1024px` e `1440px`, com atenção a overflow, corte de imagens e reflow.
+- Não confundir build bem-sucedido com aprovação visual, de acessibilidade ou de experiência.
+
+## 12. Regras de operação para Codex e Impeccable
+
+### Fazer
+
+- Ler `PRODUCT.md`, este `DESIGN.md`, `AGENTS.md` e, para direção visual/motion, `REFERENCES.md` quando disponível.
+- Usar a identidade oficial, preservando fontes, cores, assets e linguagem de marca.
+- Respeitar os espaçamentos e raios atuais; propor ajuste apenas quando houver problema verificável e necessidade justificada.
+- Diferenciar fatos de código, decisões aprovadas, referências e propostas pendentes.
+- Avaliar hierarquia, composição, legibilidade e acessibilidade antes de recomendar efeitos.
+- Trabalhar uma superfície por vez, com escopo, critérios de aceite e validação explícitos.
+
+### Não fazer
+
+- Substituir cores ou famílias tipográficas oficiais pelas de referências externas.
+- Reintroduzir coral como acento institucional ou remover seus usos legados sem autorização.
+- Uniformizar os espaçamentos de todas as seções ou redesenhar raios sem pedido.
+- Copiar interações ou criar animações apenas para parecer sofisticado.
+- Inventar valores de motion, dependências, rotas, conteúdo comercial ou prova social.
+- Modificar código, estilos ou assets durante uma auditoria exclusivamente documental.
+- Fazer commit, push, deploy ou alterações de dependências automaticamente.
+
+**Regra final:** o Impeccable deve **auditar e propor**, sem reinterpretar referências como autorização de redesign. O Codex deve implementar somente decisões explicitamente aprovadas e validar possíveis regressões. O Design System evolui por decisões conscientes, não pela aparência isolada de uma referência.
