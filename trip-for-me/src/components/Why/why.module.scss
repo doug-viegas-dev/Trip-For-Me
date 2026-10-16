@@ -52,7 +52,7 @@
   align-items: center;
   gap: 30px;
   padding-block: 40px;
-  padding-inline: 10%;
+  padding-inline: var(--content-edge);
   background-color: white;
   >h2 {
     text-transform: uppercase;
@@ -97,5 +97,24 @@
     background-color: $complementary-color-2;
     margin-top: 10px;
     opacity: .3;  
+  }
+}
+
+@media (max-width: 767px) {
+  .why_section {
+    height: auto;
+    min-height: 0;
+
+    .why_features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+
+      .why_feature {
+        font-size: 14px;
+        line-height: 1.35;
+        letter-spacing: 0;
+      }
+    }
   }
 }

@@ -5,6 +5,12 @@
   padding-bottom: 20px;
   padding-inline: 10%;
   background-color: white;
+
+  @media (max-width: 767px) {
+    padding-inline: var(--content-edge);
+    padding-bottom: 40px;
+  }
+
   .title {
     @include title-style;
     text-align: center;
@@ -44,6 +50,16 @@
     letter-spacing: 1px;
   }
 
+  @media (max-width: 767px) {
+    padding: 32px 24px;
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+  }
+
   .author {
     strong {
       display: block;
@@ -52,7 +68,7 @@
       font-style: oblique;
     }
     span {
-      font-size: 0.8rem;
+      font-size: 14px;
       color: #666;
     }
   }

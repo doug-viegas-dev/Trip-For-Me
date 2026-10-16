@@ -207,3 +207,9 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .container {
+    padding-inline: var(--content-edge);
+  }
+}

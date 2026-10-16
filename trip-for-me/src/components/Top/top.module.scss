@@ -127,6 +127,36 @@
   .button_final {
     width: 100px;
   }
+
+  @media (max-width: 767px) {
+    height: auto;
+    padding-inline: var(--content-edge);
+    padding-bottom: 40px;
+
+    .grid_estilo,
+    .grid_popular {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      min-width: 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 0;
+
+      > .card {
+        flex: 0 0 78vw;
+        max-width: 300px;
+        height: clamp(420px, 120vw, 480px);
+        scroll-snap-align: start;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .top_section {
+    padding-inline: var(--content-edge);
+  }
 }
 
 @keyframes slideInUp {

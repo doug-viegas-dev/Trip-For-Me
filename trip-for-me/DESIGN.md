@@ -40,6 +40,13 @@ spacing:
   lg: "30px"
   xl: "40px"
   section-edge: "10%"
+
+responsive:
+  content-edge-mobile-compact: "24px"
+  content-edge-mobile: "24px"
+  content-edge-tablet: "24px"
+  desktop: "preserve existing section composition from 1024px"
+  title-font: "Montserrat, sans-serif"
 ---
 
 # Trip For Me — Design System
@@ -121,7 +128,13 @@ As famílias são fixas. Das referências externas, podemos adaptar **composiç�
 
 **[Decisão aplicada]** Montserrat é a família aprovada para os títulos; o token Sass usa `Montserrat, sans-serif` explicitamente, preservando os tamanhos, pesos, line-heights e espaçamentos existentes.
 
-**[Pendente de aprovação]** Escala responsiva, pesos efetivamente carregados, limites de largura de textos, line-height definitivo e convenção de caixa alta.
+**[Pendente de aprovação]** Pesos efetivamente carregados, limites de largura de textos, line-height definitivo para desktop, convenção de caixa alta e eventual escala desktop.
+
+### Escala responsiva aprovada
+
+Para a Home institucional, a escala mobile consolidada é: título principal do Hero entre `32px` e `36px`, títulos de seção entre `24px` e `28px`, introduções e subtítulos entre `14px` e `16px`, texto corrido e depoimentos em `16px`, autores entre `14px` e `15px`, metadados entre `12px` e `14px`, textos de cards entre `14px` e `16px` e informações do Footer em `13px`.
+
+Montserrat permanece a fonte aprovada para títulos. A escala é aplicada com `line-height` funcional, largura de leitura confortável e sem reintroduzir DM Serif Display.
 
 **Diretriz:** a expressividade tipográfica deve transmitir autoridade serena, não gritaria. Revisar legibilidade real em desktop e mobile antes de alterar tamanhos já existentes.
 
@@ -159,6 +172,15 @@ As famílias são fixas. Das referências externas, podemos adaptar **composiç�
 **[Diretriz]** A composição desktop não pode impor cortes ou alturas rígidas indevidas em mobile. Priorizar reflow, crop intencional, alinhamento e legibilidade.
 
 **[Pendente de aprovação]** Container canônico, política definitiva de grid, distribuição de colunas por viewport e regras finais de altura para seções.
+
+### Responsividade aprovada para a Home
+
+- O respiro lateral de conteúdo usa `24px` em toda a faixa abaixo de `768px`; tablet de `768px` a `1023px` preserva `24px` e desktop preserva o sistema existente.
+- A mesma borda responsiva orienta Header, Hero, About, Testimonials, Top, Trips, Why e Footer; fotografias full-bleed, carrosséis e o menu lateral permanecem exceções intencionais.
+- Textos corridos usam altura dinâmica e largura de leitura limitada; títulos podem quebrar naturalmente, sem cortes ou redução indiscriminada para esconder overflow.
+- Grids de cards preservam a composição desktop a partir de `1024px`; em mobile, Top mantém carrossel horizontal e Trips mantém uma coluna com informação sempre visível ao toque.
+- Why usa duas colunas em mobile para manter números, ícones e legendas legíveis. Ready conserva seu conteúdo atual sem expansão estrutural.
+- O ritmo vertical deve alternar impacto fotográfico, leitura e respiro, preservando a composição desktop existente.
 
 ## 6. Fotografia editorial
 

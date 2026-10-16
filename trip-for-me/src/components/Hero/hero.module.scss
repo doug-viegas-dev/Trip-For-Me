@@ -25,6 +25,8 @@
     justify-content: center;
     text-align: center;
     gap: 10px;
+    min-width: 0;
+    width: min(100%, 43.08rem);
 
     .title_hero {
       font-weight: 600;
@@ -48,6 +50,34 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content_hero {
+      width: 100%;
+      padding-inline: var(--content-edge);
+
+      .title_hero {
+        font-size: clamp(2rem, 9.5vw, 2.25rem);
+        line-height: 1.05;
+      }
+
+      .heading_hero {
+        font-size: 16px;
+        line-height: 1.4;
+        max-width: 30rem;
+      }
+
+      .cta_div {
+        flex-direction: column;
+        max-width: 280px;
+
+        button {
+          width: 100%;
+          min-height: 44px;
+        }
+      }
     }
   }
 

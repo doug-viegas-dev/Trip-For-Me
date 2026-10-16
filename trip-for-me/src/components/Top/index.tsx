@@ -42,7 +42,11 @@ export default function Top() {
         ))}
       </nav>
 
-      <div key={activeTab} className={`${styles.grid} ${styles['grid_' + activeTab]}`}>
+      <div
+        key={activeTab}
+        className={`${styles.grid} ${styles['grid_' + activeTab]}`}
+        tabIndex={0}
+      >
         {cardsData[activeTab as keyof typeof cardsData].map((card, index) => (
           <div
             key={index}

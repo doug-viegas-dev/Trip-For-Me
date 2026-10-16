@@ -50,7 +50,7 @@ export default function Testimonials() {
     <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={30}
-        slidesPerView={3} // Mobile
+        slidesPerView={1} // Mobile
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         breakpoints={{

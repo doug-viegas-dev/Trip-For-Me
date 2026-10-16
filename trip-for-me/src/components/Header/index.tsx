@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./header.module.scss";
 import Logo from "../../../public/imgs/logo.png";
@@ -15,6 +15,13 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    menuButtonRef.current?.focus();
+  };
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -40,6 +47,26 @@ export default function Header() {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      closeButtonRef.current?.focus();
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
   return (
     <header
       className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isVisible ? styles.visible : styles.hidden}`}
@@ -52,9 +79,13 @@ export default function Header() {
           />
         </Link>
         <button
+          ref={menuButtonRef}
           className={styles.menuButton}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Abrir menu"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-expanded={isMenuOpen}
+          aria-controls="trip-for-me-menu"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          type="button"
         >
           <span
             className={`${styles.hamburger} ${isScrolled ? styles.dark_hamburger : ""}`}
@@ -62,10 +93,19 @@ export default function Header() {
         </button>
       </div>
 
-      <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
+      <nav
+        id="trip-for-me-menu"
+        className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}
+        aria-hidden={!isMenuOpen}
+        aria-label="Menu principal"
+        inert={!isMenuOpen}
+      >
         <button
+          ref={closeButtonRef}
           className={styles.closeButton}
-          onClick={() => setIsMenuOpen(false)}
+          onClick={closeMenu}
+          aria-label="Fechar menu"
+          type="button"
         >
           ✕
         </button>

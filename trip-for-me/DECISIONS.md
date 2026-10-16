@@ -17,6 +17,8 @@
 | D-007 | Usar **Avenue H** como referência prioritária de **fluidez de scroll e navegação como jornada**. | Construir progressão narrativa entre seções. | Técnica, intensidade e comportamento das animações dependem de proposta e aprovação específicas. |
 | D-008 | Desenvolver o site **incrementalmente**, com Codex na implementação e Impeccable na auditoria/refinamento visual. | Preservar o código e possibilitar validações objetivas. | Separar diagnóstico, proposta aprovada e implementação; não alterar código nem dependências automaticamente. |
 | D-009 | Manter o **GitHub como fonte de verdade** do código e da documentação versionada. | Evitar divergências entre cópias e decisões. | Alterações locais só passam a integrar a versão publicada após commit e push confirmados. |
+| D-010 | Consolidar o sistema responsivo da Home com bordas de conteúdo de `16px`, `20px` e `24px` por faixa de viewport, mantendo Montserrat nos títulos. | A auditoria visual encontrou margens inconsistentes, leitura comprimida e indicadores ilegíveis em mobile. | Aplicar somente ajustes responsivos e de legibilidade; preservar paleta, fotografias, raios, copy, comportamento desktop e seções existentes. |
+| D-011 | Ampliar o respiro lateral mobile para `24px` em toda a faixa abaixo de `768px`. | A borda única melhora o alinhamento entre seções e reforça a composição editorial sem criar wrappers ou alterar a hierarquia tipográfica. | Aplicar ao conteúdo interno; preservar fundos full-bleed, vídeo do Hero, faixas de carrossel e valores de tablet/desktop. |
 
 ## Definições que **não** foram aprovadas
 

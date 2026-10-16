@@ -68,7 +68,7 @@
 
       .trip_duration {
         position: absolute;
-        top: 30;
+        top: 30px;
         right: 30px;
         text-transform: uppercase;
         font-weight: 600;
@@ -134,6 +134,90 @@
           transform: translateY(0);
         }
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding-inline: var(--content-edge);
+    padding-block: 40px;
+    gap: 30px;
+
+    .trips_overlay {
+      top: 0;
+      left: 0;
+    }
+
+    .trips_heading {
+      min-width: 0;
+      width: 100%;
+      padding-left: 0;
+
+      > h6 {
+        max-width: 34rem;
+        line-height: 1.6;
+      }
+    }
+
+    .trips_grid {
+      width: 100%;
+      min-width: 0;
+      padding-right: 0;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      .trip_card {
+        width: 100%;
+        min-width: 0;
+        min-height: 420px;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        padding-inline: 20px;
+
+        .trip_duration {
+          top: 20px;
+          right: 20px;
+        }
+
+        .trip_heading {
+          font-size: 14px;
+          line-height: 1.4;
+          max-height: none;
+          opacity: 1;
+          transform: none;
+        }
+
+        .card_overlay {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.1) 65%
+          );
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .trips_section {
+    padding-inline: var(--content-edge);
+
+    .trips_overlay {
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+
+    .trips_heading {
+      padding-left: 0;
+    }
+
+    .trips_grid {
+      padding-right: 0;
     }
   }
 }
