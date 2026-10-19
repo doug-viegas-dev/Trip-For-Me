@@ -1,6 +1,8 @@
 @use "../../styles/index" as *;
 
 .section {
+  position: relative;
+  z-index: 1;
   background-color: $light-bg;
   padding: clamp(56px, 7vw, 88px) 10% clamp(56px, 7vw, 88px);
 }
@@ -15,6 +17,21 @@
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   line-height: 1.2;
   text-align: center;
+}
+
+.section.revealReady .inner > h2,
+.section.revealReady .panel {
+  opacity: var(--journey-reveal, 0);
+  transform: translateY(var(--journey-reveal-offset, 24px));
+}
+
+.section.revealReady .panel:is(:hover, :focus-visible, .panelActive) {
+  opacity: 1;
+  transform: none;
+}
+
+.section.revealReady .inner > h2 {
+  will-change: opacity, transform;
 }
 
 .grid {
@@ -34,6 +51,8 @@
   color: white;
   cursor: pointer;
   outline: none;
+
+  will-change: opacity, transform;
 
   &:hover,
   &:focus-visible,
@@ -195,13 +214,13 @@
   }
 
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     margin-top: 24px;
   }
 
   .panel {
-    min-height: clamp(230px, 72vw, 300px);
+    min-height: clamp(250px, 72vw, 320px);
 
     &:hover .image {
       transform: none;
@@ -229,6 +248,30 @@
       bottom: calc(100% + 6px);
     }
 
+    &[data-journey-in-view="true"] {
+      .overlay {
+        background: linear-gradient(
+          to top,
+          rgba($dark-bg, 0.88) 0%,
+          rgba($dark-bg, 0.24) 72%,
+          rgba($dark-bg, 0.12) 100%
+        );
+      }
+
+      .panelDescription {
+        opacity: 1;
+        transform: none;
+      }
+
+      .content h3 {
+        bottom: calc(100% + 6px);
+      }
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
     &::after {
       right: 6px;
       bottom: 10px;
@@ -241,31 +284,42 @@
   }
 
   .content {
-    right: 6px;
+    right: 20px;
     bottom: 24px;
-    left: 6px;
+    left: 20px;
   }
 
   .content h3 {
-    max-width: none;
-    font-size: clamp(0.72rem, 3.3vw, 0.95rem);
-    letter-spacing: 0;
-    line-height: 1.12;
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+    line-height: 1.15;
   }
 
   .panelDescription {
-    opacity: 0;
-    transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .section.revealReady .inner > h2,
+  .section.revealReady .panel {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
   .image,
   .overlay,
   .descriptionReveal,
   .panelDescription,
-  .panel::after, .content h3 {
+  .panel::after,
+  .content h3 {
     transition: none;
+  }
+
+  .panelDescription {
+    opacity: 1;
+    transform: none;
   }
 
   .panel:is(:hover, :focus-visible) .image,

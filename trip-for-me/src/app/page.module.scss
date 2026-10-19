@@ -4,6 +4,24 @@
   width: 100%;
 }
 
+.heroJourney {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: -100vh;
+
+  // Extend sticky containment through the transition without shifting the next section.
+  &::after {
+    display: block;
+    height: 100vh;
+    content: "";
+  }
+}
+
+.heroJourney ~ * {
+  position: relative;
+  z-index: 1;
+}
+
 .hero {
   width: 100%;
   height: 100vh;

@@ -10,8 +10,10 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className={styles.main}>
-     <Hero />
-     <JourneyChoice />
+     <div className={styles.heroJourney}>
+      <Hero />
+      <JourneyChoice />
+     </div>
      <About />
      <Testimonials />
      <Top/>
