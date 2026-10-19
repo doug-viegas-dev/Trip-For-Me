@@ -3,7 +3,8 @@
 .top_section {
   padding-top: 40px;
   padding-inline: 5%;
-  height: 120vh;
+  height: auto;
+  padding-bottom: 40px;
   background-color: $light-bg;
   text-align: center;
   display: flex;
@@ -131,7 +132,6 @@
   @media (max-width: 767px) {
     height: auto;
     padding-inline: var(--content-edge);
-    padding-bottom: 40px;
 
     .grid_estilo,
     .grid_popular {
@@ -156,6 +156,39 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .top_section {
     padding-inline: var(--content-edge);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .top_section {
+    .grid_estilo,
+    .grid_popular {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      min-width: 0;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 0;
+
+      > .card {
+        flex: 0 0 43%;
+        height: clamp(420px, 52vw, 500px);
+        scroll-snap-align: start;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .top_section {
+    .grid_estilo,
+    .grid_popular {
+      > .card {
+        flex-basis: 30%;
+      }
+    }
   }
 }
 

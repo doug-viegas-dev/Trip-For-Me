@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./footer.module.scss";
 import Image from "next/image";
+import Why from "@/components/Why";
 import Logomarca from "../../../public/imgs/logomarca_white.png";
 import logoCadastur from "../../../public/imgs/logo_cadastur.png";
 import qrCadastur from "../../../public/imgs/cadastur_qr.jpg";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <Why />
       <div className={styles.footer_columns}>
         <div className={styles.column_footer} id={styles.column_logo}>
           <img src={Logomarca.src} alt="Logomarca" />

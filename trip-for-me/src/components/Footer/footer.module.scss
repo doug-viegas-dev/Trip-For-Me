@@ -7,23 +7,32 @@
 }
 
 #column_cadastur {
+  height: auto;
   > img {
-    width: 100%;
+    width: 80%;
+    height: auto;
   }
 
   .divqr {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
     > img {
-      width: 30%;
+      width: 60px;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    > p {
+      margin: 0;
     }
   }
 }
 
 .footer {
   background-color: $dark-bg;
-  height: 250px;
+  height: auto;
+  min-height: 250px;
   padding-inline: 10%;
   padding-block: 40px;
   display: grid;
@@ -76,20 +85,100 @@
   .footer {
     height: auto;
     min-height: 0;
-    padding-inline: var(--content-edge);
+    padding-inline: 24px;
     display: block;
 
     .footer_columns {
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
       gap: 30px;
+      text-align: center;
     }
 
     .column_footer {
       width: 100%;
-      max-width: none;
+      max-width: 34ch;
       min-width: 0;
       overflow-wrap: anywhere;
+      font-size: 13px;
+      line-height: 1.5;
+      align-items: center;
+      text-align: center;
+
+      > ul {
+        min-width: 0;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    #column_logo {
+      > img {
+        width: min(150px, 100%);
+        height: auto;
+      }
+    }
+
+    #column_cadastur {
+      max-width: none;
+
+      > img {
+        width: min(200px, 100%);
+        height: auto;
+      }
+
+      .divqr {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: center;  
+
+        > img {
+          flex: 0 0 75px;
+          width: 75px;
+          height: 75px;
+        }
+
+        > p {
+          min-width: 0;
+          margin: 0;
+          max-width: 50%;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .copyright {
+      width: 100%;
+      overflow-wrap: anywhere;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer {
+    padding-inline: 24px;
+
+    .footer_columns {
+      display: grid;
+      grid-template-areas:
+        "logo navegue"
+        "cadastur contato";
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(24px, 4vw, 48px);
+      row-gap: 40px;
+      align-items: start;
+    }
+
+    .column_footer:nth-child(1) { grid-area: logo; }
+    .column_footer:nth-child(2) { grid-area: navegue; }
+    .column_footer:nth-child(3) { grid-area: contato; }
+    .column_footer:nth-child(4) { grid-area: cadastur; }
+
+    .column_footer {
+      max-width: none;
+      min-width: 0;
       font-size: 13px;
       line-height: 1.5;
 
@@ -107,36 +196,27 @@
 
     #column_cadastur {
       > img {
-        width: min(200px, 100%);
+        width: min(250px, 100%);
         height: auto;
       }
 
       .divqr {
-        align-items: flex-start;
+        gap: 12px;
+        align-items: center;
 
         > img {
-          flex: 0 0 96px;
-          width: 96px;
-          height: 96px;
+          flex: 0 0 75px;
+          width: 75px;
+          height: 75px;
+          aspect-ratio: auto;
         }
 
         > p {
           min-width: 0;
+          max-width: 20ch;
           margin: 0;
         }
       }
     }
-
-    .copyright {
-      width: 100%;
-      overflow-wrap: anywhere;
-      line-height: 1.6;
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .footer {
-    padding-inline: var(--content-edge);
   }
 }

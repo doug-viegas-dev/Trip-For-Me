@@ -179,7 +179,10 @@ Montserrat permanece a fonte aprovada para títulos. A escala é aplicada com `l
 - A mesma borda responsiva orienta Header, Hero, About, Testimonials, Top, Trips, Why e Footer; fotografias full-bleed, carrosséis e o menu lateral permanecem exceções intencionais.
 - Textos corridos usam altura dinâmica e largura de leitura limitada; títulos podem quebrar naturalmente, sem cortes ou redução indiscriminada para esconder overflow.
 - Grids de cards preservam a composição desktop a partir de `1024px`; em mobile, Top mantém carrossel horizontal e Trips mantém uma coluna com informação sempre visível ao toque.
+- Na seção Top, abaixo de `768px` o carrossel mobile existente é preservado; de `768px` a `899px`, a faixa editorial usa scroll horizontal nativo com CSS Scroll Snap, cards de aproximadamente `43%` da faixa e cerca de dois cards completos mais parte do próximo; de `900px` a `1199px`, usa cards de aproximadamente `30%` e cerca de três completos mais parte do próximo; a partir de `1200px`, os cinco cards permanecem estáticos lado a lado.
+- A adaptação tablet limita a altura dos cards com escala fluida (`420px` a `500px`), preservando fotografia `cover`, overlays, títulos, tabs, `VER MAIS`, navegação por toque, trackpad e teclado, sem overflow horizontal no documento.
 - Why usa duas colunas em mobile para manter números, ícones e legendas legíveis. Ready conserva seu conteúdo atual sem expansão estrutural.
+- O Footer usa composição vertical centralizada até `767px`, com respiro lateral de `24px`; o Cadastur ocupa toda a largura útil da coluna, sem esticar suas imagens, e usa QR Code de pelo menos `112px`. Entre `768px` e `1199px`, usa grid 2×2 nomeado: Logo/Cadastur à esquerda e Navegue/Informações de Contato à direita; a partir de `1200px`, preserva quatro colunas horizontais, com Cadastur compacto e alinhado ao topo.
 - O ritmo vertical deve alternar impacto fotográfico, leitura e respiro, preservando a composição desktop existente.
 
 ## 6. Fotografia editorial
