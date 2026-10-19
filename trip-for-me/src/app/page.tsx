@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import styles from './page.module.scss';
+import JourneyChoice from '@/components/JourneyChoice';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
 import Top from '@/components/Top';
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
      <Hero />
+     <JourneyChoice />
      <About />
      <Testimonials />
      <Top/>

@@ -22,6 +22,7 @@
 | D-012 | Adaptar a faixa tablet da seção Top para scroll horizontal nativo com CSS Scroll Snap, usando aproximadamente dois cards e parte do próximo em `768–899px` e três cards e parte do próximo em `900–1199px`. | Cinco cards simultâneos deixavam as fotografias estreitas e alongadas em larguras intermediárias; a faixa com cards mais largos melhora a leitura e sinaliza continuidade sem redesenhar mobile ou desktop. | Preservar abaixo de `768px` o carrossel existente e a partir de `1200px` os cinco cards estáticos, além de tabs, overlays, títulos e `VER MAIS`. |
 | D-013 | Integrar os quatro indicadores existentes ao topo do Footer e retirar Ready da renderização da Home. | A decisão aprovada na reunião concentra a prova institucional em uma superfície contínua, reduz a fragmentação da Home e preserva o conteúdo comercial existente. | Manter os ícones, cores e textos atuais; os números ainda dependem de confirmação factual do cliente antes da publicação. |
 | D-014 | Centralizar o Footer no mobile e usar um grid 2×2 entre `768px` e `1199px`, com Logo/Cadastur à esquerda e Navegue/Informações de Contato à direita, preservando quatro colunas a partir de `1200px`. | A composição vertical melhora o equilíbrio e a leitura em telas estreitas; duas colunas evitam a compressão das quatro colunas em tablets sem alterar o desktop. | Preservar textos, assets, Montserrat, indicadores superiores, QR Code e copyright; Cadastur ocupa a largura útil da célula sem esticar imagens e permanece compacto no desktop; sem alturas rígidas. |
+| D-015 | Adotar os painéis fotográficos de **Escolha Sua Jornada** como referência localizada de motion editorial suave. | A implementação foi avaliada visualmente e sua suavidade foi aprovada como base para interações editoriais semelhantes. | Usar `2s`, `cubic-bezier(0.16, 1, 0.3, 1)`, zoom `scale(1.03)`, revelação de texto com `opacity` em `400ms` e `translateY(10px → 0)`, indicador `::after` de `4px` revelado por `scaleX`, posicionamento responsivo e `prefers-reduced-motion`; não transformar em tokens globais obrigatórios. |
 
 ## Definições que **não** foram aprovadas
 
@@ -29,7 +30,7 @@
 | --- | --- |
 | Coral `#e76f51` | Encontrado na implementação anterior, **não confirmado** entre as seis cores institucionais. Não removê-lo do código automaticamente. |
 | Escala tipográfica definitiva | Tamanhos, pesos e line-heights observados ainda precisam de avaliação antes de virarem regra normativa. |
-| Motion técnico | Nenhuma biblioteca, easing, duração, parallax, pinning ou smooth scrolling foi escolhida. |
+| Motion técnico global | Nenhuma biblioteca, easing, duração, parallax, pinning ou smooth scrolling foi escolhida como regra global; D-015 é uma referência localizada para interações editoriais semelhantes. |
 | Redesign ou nova composição da Home | Nenhuma alteração visual concreta foi aprovada apenas por selecionar referências. |
 | Correções técnicas e responsivas | Pendências identificadas em auditoria devem ser priorizadas e autorizadas individualmente. Consultar `CURRENT_STATE.md`. |
 

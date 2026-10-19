@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "trip-for-me/src/components/JourneyChoice/journeyChoice.module.scss"
+        ],
+        "createdAt": "2026-10-19T18:03:02.997Z",
+        "reason": "user confirmed: Antique Brass indicator line at the base of the active journey panel is an explicit visual requirement"
+      }
+    ]
+  }
+}

@@ -1,0 +1,275 @@
+@use "../../styles/index" as *;
+
+.section {
+  background-color: $light-bg;
+  padding: clamp(56px, 7vw, 88px) 10% clamp(56px, 7vw, 88px);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.inner > h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 1.4vw, 20px);
+  margin-top: 30px;
+}
+
+.panel {
+  position: relative;
+  min-height: clamp(420px, 42vw, 560px);
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 5px;
+  background-color: $dark-bg;
+  color: white;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus-visible,
+  &.panelActive {
+    border-color: $antique-brass;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $antique-brass;
+    outline-offset: 4px;
+  }
+
+  &:is(:hover, :focus-visible) {
+    .image {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      background: linear-gradient(
+        to top,
+        rgba($dark-bg, 0.88) 0%,
+        rgba($dark-bg, 0.24) 72%,
+        rgba($dark-bg, 0.12) 100%
+      );
+    }
+
+    .panelDescription {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content h3 {
+      bottom: calc(100% + 12px);
+    }
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    left: 0px;
+    height: 4px;
+    background-color: $antique-brass;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+
+  &.panelActive::after {
+    transform: scaleX(0.5);
+  }
+}
+
+.image,
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.overlay {
+  background: linear-gradient(
+    to top,
+    rgba($dark-bg, 0.82) 0%,
+    rgba($dark-bg, 0.16) 70%,
+    rgba($dark-bg, 0) 100%
+  );
+  transition: background 2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  right: 24px;
+  bottom: 38px;
+  left: 24px;
+  z-index: 2;
+}
+
+.content h3 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: bottom 2s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 15ch;
+  color: white;
+  font-family: $font-title;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.content h3 span {
+  display: block;
+}
+
+.panelDescription {
+  max-width: 34ch;
+  min-height: 0;
+  margin: 0;
+  color: white;
+  font-family: $font-main;
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  line-height: 1.55;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.descriptionReveal {
+  display: block;
+  margin: 0;
+  overflow: visible;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    padding-inline: 24px;
+  }
+
+  .panel {
+    min-height: clamp(380px, 52vw, 470px);
+  }
+
+  .content {
+    right: 18px;
+    bottom: 32px;
+    left: 18px;
+  }
+
+  .content h3 {
+    font-size: clamp(1rem, 2.4vw, 1.35rem);
+  }
+
+  .panel::after {
+    right: 18px;
+    left: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-inline: 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 24px;
+  }
+
+  .panel {
+    min-height: clamp(230px, 72vw, 300px);
+
+    &:hover .image {
+      transform: none;
+    }
+
+    &.panelActive .overlay {
+      background: linear-gradient(
+        to top,
+        rgba($dark-bg, 0.88) 0%,
+        rgba($dark-bg, 0.24) 72%,
+        rgba($dark-bg, 0.12) 100%
+      );
+    }
+
+    &.panelActive .panelDescription,
+    &:focus-visible .panelDescription,
+    &:hover .panelDescription {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.panelActive .content h3,
+    &:focus-visible .content h3,
+    &:hover .content h3 {
+      bottom: calc(100% + 6px);
+    }
+
+    &::after {
+      right: 6px;
+      bottom: 10px;
+      left: 6px;
+    }
+
+    &:active .image {
+      transform: scale(1.02);
+    }
+  }
+
+  .content {
+    right: 6px;
+    bottom: 24px;
+    left: 6px;
+  }
+
+  .content h3 {
+    max-width: none;
+    font-size: clamp(0.72rem, 3.3vw, 0.95rem);
+    letter-spacing: 0;
+    line-height: 1.12;
+  }
+
+  .panelDescription {
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .overlay,
+  .descriptionReveal,
+  .panelDescription,
+  .panel::after, .content h3 {
+    transition: none;
+  }
+
+  .panel:is(:hover, :focus-visible) .image,
+  .panel:active .image {
+    transform: none;
+  }
+}

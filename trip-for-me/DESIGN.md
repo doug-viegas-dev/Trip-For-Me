@@ -232,6 +232,21 @@ Montserrat permanece a fonte aprovada para títulos. A escala é aplicada com `l
 
 **[Pendente de aprovação]** Durações canônicas, easing, stagger, gatilhos por scroll, política de autoplay, storyboard e eventuais dependências.
 
+### Referência de motion — Painéis fotográficos da seção Escolha Sua Jornada
+
+**[Aprovado — referência localizada]** A implementação dos painéis fotográficos da seção **Escolha Sua Jornada** foi avaliada visualmente, e sua suavidade foi aprovada como referência para futuras interações editoriais semelhantes.
+
+- Movimento deliberadamente suave, com desaceleração prolongada.
+- Duração de referência: `2s`.
+- Easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
+- Zoom fotográfico discreto: `scale(1.03)`.
+- Revelação de texto por `opacity` em `400ms` e `translateY(10px → 0)`.
+- Indicador decorativo `::after` com `4px` de altura, revelado por `scaleX`.
+- Posicionamento do indicador adaptado responsivamente, mantendo alinhamento preciso com o conteúdo.
+- Respeito obrigatório a `prefers-reduced-motion`.
+
+Esses parâmetros são uma referência aprovada para interações semelhantes, não tokens globais obrigatórios. O Impeccable deve avaliar duração, intensidade e finalidade conforme cada componente.
+
 ## 9. Elevação, formas e componentes
 
 ### Elevation & Depth
