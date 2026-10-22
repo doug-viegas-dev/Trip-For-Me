@@ -3,10 +3,24 @@
 import {
   type KeyboardEvent,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
 } from "react";
 import styles from "./journeyChoice.module.scss";
+
+function scrollToSelectedContent(element: HTMLElement | null) {
+  if (!element) {
+    return;
+  }
+
+  element.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+    block: "start",
+  });
+}
 
 const journeys = [
   {
@@ -39,6 +53,8 @@ export default function JourneyChoice() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const panelsRef = useRef<Array<HTMLElement | null>>([]);
+  const selectedContentRef = useRef<HTMLElement | null>(null);
+  const pendingSelectionScrollRef = useRef(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -205,8 +221,23 @@ export default function JourneyChoice() {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    if (!pendingSelectionScrollRef.current) {
+      return;
+    }
+
+    pendingSelectionScrollRef.current = false;
+    scrollToSelectedContent(selectedContentRef.current);
+  }, [selectedJourneyId]);
+
   function selectJourney(id: string) {
+    pendingSelectionScrollRef.current = true;
     setSelectedJourneyId(id);
+
+    if (id === selectedJourneyId) {
+      pendingSelectionScrollRef.current = false;
+      scrollToSelectedContent(selectedContentRef.current);
+    }
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLElement>, id: string) {
@@ -216,67 +247,83 @@ export default function JourneyChoice() {
     }
   }
 
+  const selectedJourney = journeys.find(
+    (journey) => journey.id === selectedJourneyId,
+  );
+
   return (
-    <section
-      ref={sectionRef}
-      className={styles.section}
-      aria-labelledby="journey-choice-title"
-    >
-      <div className={styles.inner}>
-        <h2 ref={titleRef} id="journey-choice-title">
-          ESCOLHA SUA JORNADA
-        </h2>
+    <>
+      <section
+        ref={sectionRef}
+        className={styles.section}
+        aria-labelledby="journey-choice-title"
+      >
+        <div className={styles.inner}>
+          <h2 ref={titleRef} id="journey-choice-title">
+            ESCOLHA SUA JORNADA
+          </h2>
 
-        <div className={styles.grid}>
-          {journeys.map((journey, index) => {
-            const titleId = `journey-${journey.id}-title`;
-            const descriptionId = `journey-${journey.id}-description`;
-            const isSelected = journey.id === selectedJourneyId;
+          <div className={styles.grid}>
+            {journeys.map((journey, index) => {
+              const titleId = `journey-${journey.id}-title`;
+              const descriptionId = `journey-${journey.id}-description`;
+              const isSelected = journey.id === selectedJourneyId;
 
-            return (
-              <article
-                key={journey.id}
-                ref={(panel) => {
-                  panelsRef.current[index] = panel;
-                }}
-                className={`${styles.panel} ${
-                  isSelected ? styles.panelActive : ""
-                }`}
-                role="button"
-                tabIndex={0}
-                aria-labelledby={titleId}
-                aria-describedby={descriptionId}
-                aria-pressed={isSelected}
-                onClick={() => selectJourney(journey.id)}
-                onKeyDown={(event) => handleKeyDown(event, journey.id)}
-              >
-                <div
-                  className={styles.image}
-                  style={{ backgroundImage: `url("${journey.image}")` }}
-                  aria-hidden="true"
-                />
-                <div className={styles.overlay} aria-hidden="true" />
-                <div className={styles.content}>
-                  <h3 id={titleId}>
-                    {journey.titleLines.map((line, index) => (
-                      <span key={line}>
-                        {index > 0 ? " " : ""}
-                        {line}
-                      </span>
-                    ))}
-                  </h3>
-                  <div className={styles.descriptionReveal}>
-                    <p id={descriptionId} className={styles.panelDescription}>
-                      {journey.description}
-                    </p>
+              return (
+                <article
+                  key={journey.id}
+                  ref={(panel) => {
+                    panelsRef.current[index] = panel;
+                  }}
+                  className={`${styles.panel} ${
+                    isSelected ? styles.panelActive : ""
+                  }`}
+                  role="button"
+                  tabIndex={0}
+                  aria-labelledby={titleId}
+                  aria-describedby={descriptionId}
+                  aria-pressed={isSelected}
+                  onClick={() => selectJourney(journey.id)}
+                  onKeyDown={(event) => handleKeyDown(event, journey.id)}
+                >
+                  <div
+                    className={styles.image}
+                    style={{ backgroundImage: `url("${journey.image}")` }}
+                    aria-hidden="true"
+                  />
+                  <div className={styles.overlay} aria-hidden="true" />
+                  <div className={styles.content}>
+                    <h3 id={titleId}>
+                      {journey.titleLines.map((line, index) => (
+                        <span key={line}>
+                          {index > 0 ? " " : ""}
+                          {line}
+                        </span>
+                      ))}
+                    </h3>
+                    <div className={styles.descriptionReveal}>
+                      <p id={descriptionId} className={styles.panelDescription}>
+                        {journey.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
 
-      </div>
-    </section>
+      </section>
+      {selectedJourney ? (
+        <section
+          ref={selectedContentRef}
+          className={styles.selectedContent}
+          aria-labelledby="selected-journey-title"
+          aria-live="polite"
+        >
+          <h2 id="selected-journey-title">{selectedJourney.title}</h2>
+        </section>
+      ) : null}
+    </>
   );
 }
